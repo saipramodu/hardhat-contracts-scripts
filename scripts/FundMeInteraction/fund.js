@@ -27,4 +27,7 @@ main();
 
 The local host will work only if you have started yarn hardhat node in one terminal
 use another terminal to run file path --network localhost
+
+You can use the script we made in package json 'yhr' - for yarn hardhat run
+use like yarn yhr filepath --network localhost
 */
