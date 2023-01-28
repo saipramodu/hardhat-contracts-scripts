@@ -5,7 +5,7 @@
 //as always to deploy 1. imports 2. the deploy script is an export. The hardhat config has an import of hardhat - deploy
 //module.exports = async(deployments, getNamedAccounts) ={}
 
-const { deployments, getNamedAccounts, network } = require('hardhat');
+const { deployments, getNamedAccounts, network, ethers } = require('hardhat');
 
 module.exports = async ({ deployments, getNamedAccounts }) => {
   //   const deployments = hre.deployments;
@@ -23,8 +23,8 @@ module.exports = async ({ deployments, getNamedAccounts }) => {
     `The current network you're in is ${network_name} and chain ID is ${chainID}`
   );
   // the arguments for mockV3 contract
-  const Decimals = 8;
-  const InitialAnswer = 2000 * 10e8; //Inital answer is USD eth price with 8 zeros
+  const Decimals = 18;
+  const InitialAnswer = ethers.utils.parseEther('2000'); //Inital answer is USD eth price with 18 decimal places
   log(InitialAnswer);
 
   if (chainID === 31337) {
@@ -51,7 +51,7 @@ module.exports = async ({ deployments, getNamedAccounts }) => {
 //It will always run the js files from deploy folder
 //we can create tags to deploy specific js files, like using yarn hardhat deploy --tags mocks to run this file
 
-module.exports.tags = ['mocks', 'allfund'];
+module.exports.tags = ['mocks', 'allfund', 'allDynamicNFT'];
 
 /* Output:
 Run on local network, the tx and gas details are due to log:true in deploy

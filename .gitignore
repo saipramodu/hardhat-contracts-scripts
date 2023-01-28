@@ -1,4 +1,6 @@
 node_modules
+NextJS_module
+React_Module
 .env
 coverage
 coverage.json

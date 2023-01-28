@@ -71,8 +71,8 @@ module.exports = async ({ deployments, getNamedAccounts }) => {
   //Deployer is the address of the deeployer
   log('Deployer is', deployer);
 
-  //Now we can write a cript to auto verify the contracts
-  //Instead of writing a code in ach deployment - we can have one verification function in utilities folder
+  //Now we can write a script to auto verify the contracts
+  //Instead of writing a code in each deployment - we can have one verification function in utilities folder
   // Note that this auto verfification will not work in chains other than goerli
   // because we have put etherscan api key and plugin - we have not put api key for other chains
   await verfiifcation(fundMeContract.address, [ethUSDPriceFeedAddress]);
@@ -112,16 +112,17 @@ The contract is deployed.......The contract address is 0x8d5710d75DCDaFDdA265C6f
 The name of the network is goerli and chainID is 5
 The price feed address is 0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e
 Deploying the contract....
-deploying "FundMe" (tx: 0x2fd5c156687490de9b3d78eb85f9ad1873450fd12a862df8e6e4d029d6d45a19)...: deployed at 0xaA3Ab48dc0EC76ecF046137bd909EB04312b4ce2 with 859351 gas
-The contract is deployed.......The contract address is 0xaA3Ab48dc0EC76ecF046137bd909EB04312b4ce2
+deploying "FundMe" (tx: 0xb4692f1f1f024c71a78c7153577379b2d9a3963274302f2b0441af883e193efa)...: deployed at 0xF7DD3dAFe8557b2932f4d28785b8F8ffb04C3f17 with 1150887 gas
+The contract is deployed.......The contract address is 0xF7DD3dAFe8557b2932f4d28785b8F8ffb04C3f17
+Deployer is 0x3f84a5fC79B2F3cd796Ff637D3297f0cc0d95055
 *******Verification Run***********
 Verifying contract...
 Nothing to compile
 Successfully submitted source code for contract
-contracts/FundMe.sol:FundMe at 0xaA3Ab48dc0EC76ecF046137bd909EB04312b4ce2
+contracts/FundMe.sol:FundMe at 0xF7DD3dAFe8557b2932f4d28785b8F8ffb04C3f17
 for verification on the block explorer. Waiting for verification result...
 
 Successfully verified contract FundMe on Etherscan.
-https://goerli.etherscan.io/address/0xaA3Ab48dc0EC76ecF046137bd909EB04312b4ce2#code
+https://goerli.etherscan.io/address/0xF7DD3dAFe8557b2932f4d28785b8F8ffb04C3f17#code
 The contract is verified ............
 */

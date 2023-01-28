@@ -4,6 +4,8 @@ require('@nomicfoundation/hardhat-toolbox');
 require('dotenv').config();
 require('./tasks/getBlockNo');
 require('hardhat-deploy');
+require('@openzeppelin/hardhat-upgrades');
+require('@nomiclabs/hardhat-etherscan');
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
@@ -17,7 +19,7 @@ module.exports = {
   //we can create these in .env file and then call here
   //remember to add the dotenv package in dev dependencies
   //see the way to add network and private key here
-
+  // The chain IDs can be got from chainlist.org
   /* Local blockchian: The default hardhat is not actually same as ganache - the default always resets back
 
   we can actually run a local blockchain that we can keep track of using yarn hardhat node
@@ -57,7 +59,7 @@ module.exports = {
   },
 
   //There is hardhat gas reporter installed along with hardhat to report the gas
-  //Running the test will automatically give the gas report
+  //Running the tests will automatically give the gas report
   //see https://www.npmjs.com/package/hardhat-gas-reporter
   gasReporter: {
     //We can keep the gas reporter not enabled and only enable when required
@@ -74,8 +76,13 @@ module.exports = {
     // token: 'AVAX',
   },
   namedAccounts: {
+    //Deployer will be accounted to acc. 0
     deployer: {
       default: 0,
+    },
+    //Deployer will be accounted to acc. 1
+    player: {
+      default: 1,
     },
   },
 };

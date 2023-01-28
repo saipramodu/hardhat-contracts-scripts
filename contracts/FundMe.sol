@@ -18,6 +18,7 @@ error FundMe__NotOwner();
 contract FundMe {
     using PriceConverter for uint256;
 
+    //mapping is nothing but attaching some value to another
     mapping(address => uint256) public addressToAmountFunded;
     address[] public funders;
 
@@ -73,8 +74,8 @@ contract FundMe {
         (bool callSuccess, ) = payable(msg.sender).call{value: address(this).balance}("");
         require(callSuccess, "Call failed");
     }
-    // Sai - In the above withdraw unction we are looping over the variables stored in storage array
-    // This is going to cost a lo of gas - instead we can shift all the variables to memory and then loop
+    // Sai - In the above withdraw function we are looping over the variables stored in storage array
+    // This is going to cost a lot of gas - instead we can shift all the variables to memory and then loop
     // if we check the gas reporter the chaeper withdraw will have consumed lesser gas
 
     function cheaperWithdraw() public onlyOwner{

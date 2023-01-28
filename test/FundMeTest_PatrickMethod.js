@@ -36,7 +36,8 @@ chainID == 31337
 
         const fix = await deployments.fixture(['allfund']);
         //We can see the console the deploy scripts from deploy folder
-        // console.log(fix);
+        // console.log('fix', fix);
+        console.log('Hi');
         // console.log('Deployer acc.', deployerAcc);
         //Once the contract is deployed we need to get them
         fundMeContract_test = await ethers.getContract('FundMe');

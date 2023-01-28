@@ -1,7 +1,7 @@
 //All the scripts to deploy the contracts can be made in scripts folder
 
 /*
-The atructure of deploying scripts is same as the ethers js deployment
+The structure of deploying scripts is same as the ethers js deployment
 
 1. Imports 
 
@@ -29,9 +29,9 @@ let test = 5;
 async function main() {
   //as default the contract is deployed into hardhat local network,
   // this is very much like ganache but built into the hardhat itself
-  // it will automatically take the rpc url and acc. private key to deploy - so need to specify the provider or wallet
+  // it will automatically take the rpc url and acc. private key to deploy - so no need to specify the provider or wallet
   //Once the contract is compiled, all the build info like abi or binary, hardhat is smart to get it from correct folders
-  //so need to specify the abi or binary
+  //so no need to specify the abi or binary
 
   //We can directly create contractfoctory
 
@@ -46,7 +46,7 @@ async function main() {
 
   console.log(`The address of contract is: ${contract.address}`);
   //You can see the network details using network after importing network and see etherscan api key from config file
-  console.log('the network is', network);
+  console.log('the network is', network.name);
   console.log('The eth api key is', etherscan.apiKey);
   // console.log('The deployed contract is', contract);
 
@@ -122,17 +122,20 @@ async function verifyContract(contractAddreess, constructorArgs) {
 }
 
 /* 
-Result: Deployed the contract (0x60344B9E54F689c167b39D7Fd68aba210bdd5B29) to goerli testnet
-
-the verfication happened automatically as below
-
+Deploy loading.....
+The address of contract is: 0x988dDdd8cC957882B8f91865571b4A5aAe4317Ee
+the network is goerli
+The eth api key is RV3X6AEQ115YHI6X37RARKE5SJUZM8QPUN
+We are waiting for few blocks to be mined before verification...
 Verifying contract...
 Nothing to compile
 Successfully submitted source code for contract
-contracts/SimpleStorage.sol:SimpleStorage at 0x60344B9E54F689c167b39D7Fd68aba210bdd5B29
+contracts/Storage.sol:SimpleStorage at 0x988dDdd8cC957882B8f91865571b4A5aAe4317Ee
 for verification on the block explorer. Waiting for verification result...
 
 Successfully verified contract SimpleStorage on Etherscan.
-https://goerli.etherscan.io/address/0x60344B9E54F689c167b39D7Fd68aba210bdd5B29#code
+https://goerli.etherscan.io/address/0x988dDdd8cC957882B8f91865571b4A5aAe4317Ee#code
+The current Fav no. is BigNumber { _hex: '0x00', _isBigNumber: true }
 
+** stopped as last line was getting long
 */
