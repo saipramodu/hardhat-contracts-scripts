@@ -65,7 +65,7 @@ contract Raffle is VRFConsumerBaseV2 {
   /***************Events **************/
 
   //Events - events are a way to store something in the transaction log which can be accessed later
-  // inexed variables are easier to access when needed
+  // indexed variables are easier to access when needed
   event RaffleEnter(address indexed player);
   event RequestedRaffleWinner(uint256 indexed requestId);
   event RaffleWinner(address indexed recentWinner);

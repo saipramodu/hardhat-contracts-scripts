@@ -10,7 +10,12 @@ require('@nomiclabs/hardhat-etherscan');
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   solidity: {
-    compilers: [{ version: '0.8.17' }, { version: '0.6.8' }],
+    compilers: [
+      { version: '0.8.17' },
+      { version: '0.6.8' },
+      { version: '0.4.19' },
+      { version: '0.6.12' },
+    ],
   },
 
   //sepcifying default network for reference - if not specified, hardhat will take hardhat network
@@ -27,6 +32,18 @@ module.exports = {
   
   */
   networks: {
+    hardhat: {
+      chainId: 31337,
+      // see that we are going to fork the mainnet which will simulate having the same state as mainnet
+      // but will work in our local environment
+      // This will by default always fork the mainnet - we can comment it when we can use mocks instead of forking
+      // forking: {
+      //   url: process.env.MAINNET_RPC_URL,
+      //   // if you put block number - it is called pinning the blocknumber - hardhat suggests that this will run quicker
+      //   // by pinning archival data is used - we can uncomment the block number for something like getting latest pricefeeds
+      //   // blockNumber: 14390000,
+      // },
+    },
     localhost: {
       //spinned up from yarn hardhat node
       url: 'http://127.0.0.1:8545/',
@@ -35,7 +52,7 @@ module.exports = {
     },
     goerli: {
       url: process.env.Goreli_RPC_URL,
-      accounts: [process.env.PRIVATE_KEY_OTHER],
+      accounts: [process.env.PRIVATE_KEY_OTHER, process.env.PRIVATE_KEY],
       chainId: 5,
       blockConfirmations: 6,
     },

@@ -138,7 +138,7 @@ which we can deploy and use its address
    object can be encoded in base 64. We can use base64-sol to encode the metadata to base64 - 
    use yarn add --dev base64-sol to add this package
 
-5.  ipfs://QmRrkC8TqK8mfymFA3cvj8DZ9TNfvdPsNuCWvKaf4ajyW9/4442.json is the token uri if the NFT is stored off chain. 
+5. ipfs://QmRrkC8TqK8mfymFA3cvj8DZ9TNfvdPsNuCWvKaf4ajyW9/4442.json is the token uri if the NFT is stored off chain. 
    Here  ipfs://QmRrkC8TqK8mfymFA3cvj8DZ9TNfvdPsNuCWvKaf4ajyW9 is base URI which will be same for all NFTs stored in that location
    then /4442 is the token id
 
@@ -146,5 +146,20 @@ which we can deploy and use its address
  */
 
 /* ERC 20 Tokens 
-repo change test
+1. EIP - Ethereum Improvement Proposal, ERC - Ethereum Request for Comments, ERC-20 Token standard
+
+2. ERC-20 tokens are layer 2 tokens and are different from layer 1 tokens like eth, polygon, avalanche, these
+   are layer 1 native tokens and are not smart contracts
+*/
+
+/* Defi and AAVE
+
+1. In this project of depositing ETh and borrowing DAI, we are using mainnet forking - ie. we create a copy of
+the actual mainnet blockchain in our local environment. This doesn't copy the entire blockchain - it will make API calls
+to get specific data when we request - refer https://hardhat.org/hardhat-network/docs/guides/forking-other-networks
+
+2. This method is very quick and easy, resembles what is there on the mainnet but we need an API
+
+3. See the hardhat config file where we have included the forking logic for our local hardhat network
+- an alchemy node is running for this
 */

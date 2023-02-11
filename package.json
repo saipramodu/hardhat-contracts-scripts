@@ -5,7 +5,8 @@
   "description": "Hardhat training ",
   "license": "MIT",
   "devDependencies": {
-    "@chainlink/contracts": "^0.5.1",
+    "@aave/protocol-v2": "^1.0.1",
+    "@chainlink/contracts": "^0.6.0",
     "@ethersproject/abi": "^5.4.7",
     "@ethersproject/providers": "^5.4.7",
     "@nomicfoundation/hardhat-chai-matchers": "^1.0.0",
@@ -13,6 +14,7 @@
     "@nomicfoundation/hardhat-toolbox": "^2.0.0",
     "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers",
     "@nomiclabs/hardhat-etherscan": "^3.0.0",
+    "@openzeppelin/contracts": "^4.8.1",
     "@openzeppelin/hardhat-upgrades": "^1.22.0",
     "@typechain/ethers-v5": "^10.1.0",
     "@typechain/hardhat": "^6.1.2",
@@ -30,8 +32,5 @@
   "scripts": {
     "yhr": "yarn hardhat run",
     "yhd": "yarn hardhat deploy"
-  },
-  "dependencies": {
-    "@openzeppelin/contracts": "^4.8.0"
   }
 }
